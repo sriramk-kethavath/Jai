@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>JK Septic Tank | Professional Cleaning Services</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+        html {
+            scroll-behavior: smooth;
+        }
+        body {
+            background: #f8fafc;
+            color: #1f2937;
+            line-height: 1.6;
+        }
+        /* --- HEADER --- */
+        header {
+            background: #fff;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+        }
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: #0284c7;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .logo i {
+            color: #10b981;
+        }
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+        }
+        .nav-links a {
+            text-decoration: none;
+            color: #1f2937;
+            font-weight: 600;
+            transition: color 0.3s;
+        }
+        .nav-links a:hover {
+            color: #0ea5e9;
+        }
+        .btn-call {
+            background: #10b981;
+            color: #fff;
+            padding: 10px 20px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            transition: background 0.3s;
+        }
+        .btn-call:hover {
+            background: #059669;
+        }
+        /* --- HERO --- */
+        .hero {
+            margin-top: 80px;
+            background: linear-gradient(rgba(2, 132, 199, 0.85), rgba(2, 132, 199, 0.9)),
+                url('https://images.unsplash.com/photo-1584820926521-17937d57f1fb?auto=format&fit=crop&q=80') center/cover;
+            height: 80vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: #fff;
+            padding: 2rem;
+        }
+        .hero-content h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+        }
+        .hero-content p {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        .btn-primary {
+            background: #0ea5e9;
+            color: #fff;
+            padding: 15px 30px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-size: 1.1rem;
+            font-weight: 600;
+            display: inline-block;
+            transition: transform 0.3s, background 0.3s;
+        }
+        .btn-primary:hover {
+            background: #0284c7;
+            transform: translateY(-2px);
+        }
+        /* --- SECTIONS --- */
+        section {
+            padding: 5rem 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        .section-title {
+            text-align: center;
+            font-size: 2.5rem;
+            color: #0284c7;
+            margin-bottom: 3rem;
+        }
+        .section-title span {
+            color: #10b981;
+        }
+        /* --- SERVICES --- */
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+        .service-card {
+            background: #fff;
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+            text-align: center;
+            border-bottom: 4px solid transparent;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        .service-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+            border-bottom: 4px solid #10b981;
+        }
+        .service-card i {
+            font-size: 3rem;
+            color: #0ea5e9;
+            margin-bottom: 1rem;
+        }
+        .service-card h3 {
+            margin-bottom: 1rem;
+        }
+        /* --- ABOUT --- */
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+        .about-text p {
+            margin-bottom: 1rem;
+            font-size: 1.1rem;
+        }
+        .about-text strong {
+            color: #0284c7;
+        }
+        .features-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.5rem;
+            margin-top: 1.5rem;
+        }
+        .feature {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            background: #fff;
+            padding: 15px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+        }
+        .feature i {
+            color: #10b981;
+            font-size: 1.5rem;
+        }
+        /* --- CONTACT --- */
+        .contact-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            background: #fff;
+            padding: 3rem;
+            border-radius: 15px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
+        }
+        .contact-info h3 {
+            font-size: 1.8rem;
+            margin-bottom: 1.5rem;
+            color: #0284c7;
+        }
+        .info-item {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 1.5rem;
+            font-size: 1.1rem;
+        }
+        .info-item i {
+            width: 40px;
+            height: 40px;
+            background: #f8fafc;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            color: #0ea5e9;
+        }
+        .contact-form {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+        .contact-form input,
+        .contact-form textarea {
+            padding: 15px;
+            border: 1px solid #e5e7eb;
+            border-radius: 5px;
+            font-size: 1rem;
+            font-family: inherit;
+        }
+        .contact-form input:focus,
+        .contact-form textarea:focus {
+            outline: none;
+            border-color: #0ea5e9;
+        }
+        .contact-form button {
+            background: #0284c7;
+            color: #fff;
+            border: none;
+            padding: 15px;
+            border-radius: 5px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+        .contact-form button:hover {
+            background: #1f2937;
+        }
+        /* --- FOOTER --- */
+        footer {
+            background: #1f2937;
+            color: #f3f4f6;
+            text-align: center;
+            padding: 2rem;
+            margin-top: 2rem;
+        }
+        /* --- RESPONSIVE --- */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+            .hero-content h1 {
+                font-size: 2.5rem;
+            }
+            .about-grid,
+            .contact-container,
+            .features-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- HEADER -->
+    <header>
+        <div class="nav-container">
+            <a href="#" class="logo"><i class="fa-solid fa-truck-droplet"></i> JK Septic Tank</a>
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+            <a href="tel:9391387261" class="btn-call"><i class="fa-solid fa-phone"></i> 9391387261</a>
+        </div>
+    </header>
+
+    <!-- HERO -->
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <h1>Professional Septic Tank &amp; Sewage Cleaning</h1>
+            <p>Fast, reliable, and hygienic waste management solutions. Advanced suction technology for your toughest sanitation needs.</p>
+            <a href="#contact" class="btn-primary">Get a Free Quote Now</a>
+        </div>
+    </section>
+
+    <!-- SERVICES -->
+    <section id="services">
+        <h2 class="section-title">Our <span>Services</span></h2>
+        <div class="services-grid">
+            <div class="service-card">
+                <i class="fa-solid fa-soap"></i>
+                <h3>Septic Tank Cleaning</h3>
+                <p>Complete sludge removal using modern high-power suction machines. Prevents clogs, spills, and foul odors.</p>
+            </div>
+            <div class="service-card">
+                <i class="fa-solid fa-water"></i>
+                <h3>Sewage Cleaning</h3>
+                <p>Clearing choked sewer lines, manholes, and underground pipes for homes, hotels, and industries.</p>
+            </div>
+            <div class="service-card">
+                <i class="fa-solid fa-faucet-drip"></i>
+                <h3>Drainage Cleaning</h3>
+                <p>High-pressure water jetting to remove stubborn blockages and ensure smooth drainage flow.</p>
+            </div>
+            <div class="service-card">
+                <i class="fa-solid fa-truck-fast"></i>
+                <h3>24/7 Emergency Service</h3>
+                <p>Sanitation emergencies don't wait. Rapid response service whenever you need us, day or night.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ABOUT -->
+    <section id="about">
+        <div class="about-grid">
+            <div class="about-text">
+                <h2 class="section-title" style="text-align:left">Who <span>We Are</span></h2>
+                <p><strong>JK Septic Tank</strong>, operated by <strong>Kethavath Jairam</strong>, is a trusted name in sanitation and waste management services.</p>
+                <p>We use advanced blow-back and suction tank vehicles to clean systems safely — no hazardous spills, no property damage.</p>
+                <p>We believe in hygienic maintenance, affordable pricing, and 100% customer satisfaction on every job.</p>
+            </div>
+            <div>
+                <h3 style="font-size:1.5rem;margin-bottom:20px;color:#0284c7">Why Choose Us?</h3>
+                <div class="features-grid">
+                    <div class="feature"><i class="fa-solid fa-check-circle"></i> Highly Experienced</div>
+                    <div class="feature"><i class="fa-solid fa-coins"></i> Affordable Pricing</div>
+                    <div class="feature"><i class="fa-solid fa-clock"></i> 24/7 Availability</div>
+                    <div class="feature"><i class="fa-solid fa-leaf"></i> Safe &amp; Eco-friendly</div>
+                    <div class="feature"><i class="fa-solid fa-helmet-safety"></i> Expert Team</div>
+                    <div class="feature"><i class="fa-solid fa-thumbs-up"></i> 100% Satisfaction</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact">
+        <h2 class="section-title">Contact <span>Us</span></h2>
+        <div class="contact-container">
+            <div class="contact-info">
+                <h3>Get In Touch</h3>
+                <p style="margin-bottom:2rem;color:#4b5563">Call or email Kethavath Jairam directly for immediate assistance.</p>
+                <div class="info-item">
+                    <i class="fa-solid fa-phone"></i>
+                    <div><strong>Phone</strong><br>9391387261</div>
+                </div>
+                <div class="info-item">
+                    <i class="fa-solid fa-envelope"></i>
+                    <div><strong>Email</strong><br>jairamkethavath148@gmail.com</div>
+                </div>
+                <div class="info-item">
+                    <i class="fa-solid fa-user-tie"></i>
+                    <div><strong>Operated By</strong><br>Kethavath Jairam</div>
+                </div>
+            </div>
+            <form class="contact-form" onsubmit="event.preventDefault(); alert('Thank you! We will call you back shortly.');">
+                <input type="text" placeholder="Your Name" required />
+                <input type="text" placeholder="Your Phone Number" required />
+                <textarea rows="5" placeholder="How can we help you?" required></textarea>
+                <button type="submit">Send Message</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+        <p>&copy; 2025 JK Septic Tank. Operated by Kethavath Jairam. All Rights Reserved.</p>
+    </footer>
+
+</body>
+</html>
